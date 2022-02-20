@@ -9,9 +9,9 @@
 <body>
 	<h1>Welcome to Joe's Hotdog Stand!</h1>
 	<div id="order">
-	<div>Hotdogs: <span id="dogs" class="item">None</span></div>
-	<div>Fries: <span id="fries" class="item">Nope</span></div>
-	<div>Sodas: <span id="sodas" class="item">Nada</span></div>
+	<div>Hotdogs ($3.75): <span id="dogs" class="item">None</span></div>
+	<div>Fries ($2.00): <span id="fries" class="item">Nope</span></div>
+	<div>Sodas ($1.80): <span id="sodas" class="item">Nada</span></div>
 	<script language="javascript">
 		hotdogs = prompt("How Many Hotdogs Would You Like?");
 		fries = prompt("How Many Fries Would You Like?");
@@ -27,11 +27,11 @@
 		
 		if (subtotal >= 20){
 			discount = subtotal * 0.1;
-			document.write('<p id="discount">' + "Discount: " + '<span id="sodas" class="item">' + "$" + discount.toFixed(2) + '</span>' + '</p>');
+			document.write('<p id="discount">' + "Discount (10% off): " + '<span id="sodas" class="item">' + "$" + discount.toFixed(2) + '</span>' + '</p>');
 			subtotal = subtotal * 0.9;
 		}
 		
-		document.write('<p id="tax">' + "Tax: " + '<span id="sodas" class="item">' + "$" + (subtotal * 0.0625).toFixed(2) + '</span>' + '</p>');
+		document.write('<p id="tax">' + "Tax (6.25%): " + '<span id="sodas" class="item">' + "$" + (subtotal * 0.0625).toFixed(2) + '</span>' + '</p>');
 		
 		document.write('<p id="final">' + "Final: " + '<span id="sodas" class="item">' + "$" + (subtotal += (subtotal * 0.0625)).toFixed(2) + '</span>' + '</p>');
 	</script>
