@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Joe's Hotdog Stand</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<h1>Welcome to Joe's Hotdog Stand!</h1>
+	<div id="order">
+	<div>Hotdogs: <span id="dogs" class="item">None</span></div>
+	<div>Fries: <span id="fries" class="item">Nope</span></div>
+	<div>Sodas: <span id="sodas" class="item">Nada</span></div>
+	<script language="javascript">
+		hotdogs = prompt("How Many Hotdogs Would You Like?");
+		fries = prompt("How Many Fries Would You Like?");
+		sodas = prompt("How Many Sodas Would You Like?");
+		
+		subtotal = (3.75 * hotdogs) + (2 * fries) + (1.8 * sodas);
+		
+		document.getElementById("dogs").innerHTML = hotdogs;
+		document.getElementById("fries").textContent = fries;
+		document.getElementById("sodas").textContent = sodas;
+		
+		document.write('<p id="subtotal">' + "Subtotal: " + '<span id="sodas" class="item">' + "$" + subtotal + '</span>' + '</p>');
+		
+		if (subtotal >= 20){
+			discount = subtotal * 0.1;
+			document.write('<p id="discount">' + "Discount: " + '<span id="sodas" class="item">' + "$" + discount.toFixed(2) + '</span>' + '</p>');
+			subtotal = subtotal * 0.9;
+		}
+		
+		document.write('<p id="tax">' + "Tax: " + '<span id="sodas" class="item">' + "$" + (subtotal * 0.0625).toFixed(2) + '</span>' + '</p>');
+		
+		document.write('<p id="final">' + "Final: " + '<span id="sodas" class="item">' + "$" + (subtotal += (subtotal * 0.0625)).toFixed(2) + '</span>' + '</p>');
+	</script>
+	</div>
+</body>
+</html>
